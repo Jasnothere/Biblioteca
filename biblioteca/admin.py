@@ -38,7 +38,7 @@ class CopiaAdmin(admin.ModelAdmin):
         
     @admin.action(description='Marcar como dañado')
     def marcar_dañada(self, request, queryset):
-        cantidad = queryset.update(condicion='dañado')
+        cantidad = queryset.update(condicion='DAÑADO')
         self.message_user(request, f'{cantidad} copia(s) marcadas como dañadas.')
 
 
@@ -48,7 +48,7 @@ class PrestamoAdmin(admin.ModelAdmin):
     list_display = ['estudiante__nombre', 'copia__codigo_inventario', 'fecha_prestamo', 'fecha_devolucion', 'fecha_limite']
     search_fields = ['estudiante__nombre', 'copia__codigo_inventario', 'estudiante__codigo']
     list_filter = ['fecha_prestamo', 'fecha_devolucion']
-    readonly_fields = ['fecha_prestamo']
+    # readonly_fields = ['fecha_prestamo']
     actions = ['marcar_devuelto']
     
     @admin.action(description='Marcar como devuelto (hoy)')

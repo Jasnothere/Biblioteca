@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import Q
+from datetime import date
 
 # Create your models here.
 
@@ -59,7 +60,7 @@ class Estudiante(models.Model):
 class Prestamo(models.Model):
     estudiante = models.ForeignKey(Estudiante, on_delete=models.PROTECT, related_name='prestamos')
     copia = models.ForeignKey(Copia, on_delete=models.PROTECT, related_name='prestamos')
-    fecha_prestamo = models.DateField(auto_now_add=True)
+    fecha_prestamo = models.DateField(default=date.today)
     fecha_devolucion = models.DateField(null=True, blank=True)
     fecha_limite = models.DateField()
 
