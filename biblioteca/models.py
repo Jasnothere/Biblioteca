@@ -24,6 +24,7 @@ class Libro(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True, blank=True, related_name='libros')
     anio_publicacion = models.PositiveIntegerField()
     isbn = models.CharField(max_length=13, unique=True)
+    idioma = models.CharField(max_length=30)
 
     def __str__(self):
         return f"Título: {self.titulo}, Anio de Publicación: {self.anio_publicacion}, ISBN: {self.isbn}"
