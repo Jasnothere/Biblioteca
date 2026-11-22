@@ -346,25 +346,25 @@ print(len(ctx), "consultas")
 
 ## 🤖 Uso de inteligencia artificial
 
-✍️ **ESCRIBE TÚ ESTA SECCIÓN.** Debe decir qué agente usaste, qué le pediste y qué tuviste que corregir. Lo que realmente pasó fue:
-- Usaste a Claude como tutor durante toda la actividad (explicaciones, revisión de tu código y de tus respuestas).
-- Claude generó el script `cargar_datos.py`. Lo leíste antes de ejecutarlo, como pide la guía, y respondiste preguntas sobre él (`get_or_create`, `.add()` después de crear).
-- Para el diagrama: primero escribiste tus propias relaciones a mano y luego le pediste el diagrama completo al agente con tu `models.py`. Al revisarlo con la lista de la guía no encontraste modelos ni campos inventados. En tu versión manual las cardinalidades estaban bien, pero tenía errores de sintaxis (símbolos del lado izquierdo al revés: `o{` en vez de `}o`), y lo de Libro–Autor quedó corregido como `}o--|{`.
-- Claude te ayudó a armar este README a partir de tus respuestas.
+Use el agente de IA claude con el cual hice las siguientes cosas:
+- Use claude como tutor durante toda la actividad las cuales me ayudo en el tema de explicaciones, revision de codigo y de respuestas.
+- Use claude para generar el script 'cargar_datos.py' el cual lo lei antes de ejecutarlo asi como pide la guia y respondi las preguntas sobre 'get_or_create' y '.add()'
+- Use claude para el tema de los diagramas, le pedi explicacion detallada y despues hice las relaciones a mano, le pase las relaciones a claude y revise la lista que genero, despues de esto vi que no habia modelos ni campos inventados asi que continue pidiendole que me corrigiera la sintaxis de los simbolos de las relaciones.
+- Use claude para realizar este README a aprtir de mis respuestas y predicciones dependiendo de los retos.
 
 ---
 
 ## 👥 Equipo y reflexión
 
-**Integrantes:** ✍️ (escribe los nombres)
-
-✍️ **Responde con tus palabras:**
+**Integrantes:** Jason Andres Vasquez Ramirez - 1152528 - programacion web
 
 1. **¿Qué parte del diseño cambió después de escribir las primeras consultas, y por qué?**
-   *(Pista: `fecha_prestamo` pasó de `auto_now_add` a `default=date.today`. ¿Por qué lo necesitaste?)*
+cambio 'fecha_prestamo' de pasar a 'auto_now_add' a 'default=date.today' ya que al tener auto_now_add no dejaba modificar la fecha asi que
+toco cambiarlo a default=date.today para poder realizar cambios a las fechas de prestamo.
 
 2. **¿En qué se equivocó el agente con el diagrama y cómo lo notaron?**
-   *(Sé honesto: si el agente no se equivocó, dilo, y cuenta qué revisaste para estar seguro y qué errores tenía tu versión manual.)*
+   El agente de IA no se equivoco en el diagrama, mas bien ayudo a la correccion de la sintaxis de las relaciones
 
 3. **¿Qué decisión del modelo defenderían ante otro grupo y cuál cambiarían si empezaran de nuevo?**
-   *(Ideas: defender el constraint en vez de `clean()`; cambiar `autor` por `autores`, o el `__str__`.)*
+    defenderia el constraint aplicado para el tema de los prestamos activos y la relacion de las copias ya que se aplica para todo lugar
+    tal como el admin, el shell y no depende de llamar a full_clean()
